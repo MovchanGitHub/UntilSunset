@@ -19,35 +19,8 @@ public class LevelGeneration : MonoBehaviour
     public GameObject tombstone;
     public int tombstoneAmount;
 
-    private void Start()
+    protected virtual void Start()
     {
-        /*foreach (SpawnSpot spot in spots)
-        {
-            var pos = new Vector3(spot.transform.position.x, spot.transform.position.y - 0.35f, spot.transform.position.z);
-            Instantiate(tombstone, pos, Quaternion.identity);
-        }*/
-
-        /*int generalAmount = stonesAmount + treesAmount + bushAmount + tombstoneAmount;
-        int spawnedAmount = 0;
-
-        var randomShuffle = Shuffle(generalAmount, spots.Length);
-
-        for (int randInd = 0; randInd < spots.Length; randInd++)
-        {
-            if (randomShuffle.Contains(randInd))
-                continue;
-
-            if (spawnedAmount < treesAmount)
-                SpawnTree(randInd);
-            else if (spawnedAmount < treesAmount + stonesAmount)
-                SpawnStone(randInd);
-            else if (spawnedAmount < treesAmount + stonesAmount + bushAmount)
-                SpawnBush(randInd);
-            else
-                SpawnTombstone(randInd);
-
-            spawnedAmount++;
-        }*/
 #if UNITY_ANDROID
         SetPEValues(); // for Pocket Edition
 #endif
@@ -73,49 +46,49 @@ public class LevelGeneration : MonoBehaviour
 
     }
 
-    private Vector3 CalculateTreePosition(GameObject ob)
+    protected Vector3 CalculateTreePosition(GameObject ob)
     {
         return new Vector3(ob.transform.position.x, ob.transform.position.y + 1f, ob.transform.position.z);
     }
 
-    private void SpawnTree(int seed)
+    protected virtual void SpawnTree(int seed)
     {
         Instantiate(tree, CalculateTreePosition(spots[seed].points[Random.Range(0, 4)]), Quaternion.identity);
     }
 
-    private Vector3 CalculateStonePosition(GameObject ob)
+    protected Vector3 CalculateStonePosition(GameObject ob)
     {
         return ob.transform.position;
     }
 
-    private void SpawnStone(int seed)
+    protected virtual void SpawnStone(int seed)
     {
         Instantiate(stone, CalculateStonePosition(spots[seed].points[Random.Range(0, 4)]), Quaternion.identity);
     }
 
-    private Vector3 CalculateBushPosition(GameObject ob)
+    protected Vector3 CalculateBushPosition(GameObject ob)
     {
         return new Vector3(ob.transform.position.x, ob.transform.position.y, ob.transform.position.z);
     }
 
-    private void SpawnBush(int seed)
+    protected virtual void SpawnBush(int seed)
     {
         Instantiate(bush, CalculateBushPosition(spots[seed].points[Random.Range(0, 4)]), Quaternion.identity);
     }
 
-    private Vector3 CalculateTombstonePosition(GameObject ob)
+    protected Vector3 CalculateTombstonePosition(GameObject ob)
     {
         return new Vector3(ob.transform.position.x, ob.transform.position.y - 0.5f, ob.transform.position.z);
     }
 
-    private void SpawnTombstone(int seed)
+    protected virtual void SpawnTombstone(int seed)
     {
         Instantiate(tombstone, CalculateTombstonePosition(spots[seed].points[Random.Range(0, 4)]), Quaternion.identity);
     }
 
     private HashSet<int> Shuffle(int need, int have)
     {
-        need = Min(need, have); // чтобы юнити не умер в случае не верных входных данных
+        need = Min(need, have); // пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
 
         HashSet<int> result = new HashSet<int>();
 
