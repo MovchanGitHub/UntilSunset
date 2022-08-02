@@ -64,7 +64,7 @@ public class PlayerController : MonoBehaviour
     private float batYSpeed = 8f;
 
     //private int henchmanLine;
-    private void Awake()
+    protected virtual void Awake()
     {
         mySortingGroup = gameObject.GetComponent<SortingGroup>();
         rigidbBody2D = GetComponent<Rigidbody2D>();

@@ -5,7 +5,7 @@ using static System.Math;
 
 using CnControls;
 
-public class MainCameraScript : MonoBehaviour
+public class MainCameraPhotonNetwork : MonoBehaviour
 {
     public Transform player;
 
@@ -23,10 +23,10 @@ public class MainCameraScript : MonoBehaviour
     {
         camera = Camera.main;
         targetZoom = camera.orthographicSize;
-        /*joystick = GameObject.Find("Joystick");
+        joystick = GameObject.Find("Joystick");
 #if UNITY_STANDALONE_WIN
         joystick.SetActive(false);
-#endif*/
+#endif
     }
 
     private void LateUpdate()

@@ -6,6 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/PhotonLobby.unity
+    guid: 6fac1d8432fb2d544938255e637691eb
+  - enabled: 1
+    path: Assets/Scenes/Level_3_Scene_Photon.unity
+    guid: b5756beee0076c0408bc90480dabc44f
+  - enabled: 0
     path: Assets/Scenes/Menu.unity
     guid: 1f0ed68864e9c6745990d08a0a270622
   - enabled: 0
@@ -20,7 +26,4 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Level_3_Scene.unity
     guid: 7b3dac955cb334645b6c07c9bf4a544e
-  - enabled: 1
-    path: Assets/Scenes/Level_3_Scene_Photon.unity
-    guid: b5756beee0076c0408bc90480dabc44f
   m_configObjects: {}
