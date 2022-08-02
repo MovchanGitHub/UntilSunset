@@ -10,9 +10,32 @@ public class PlayerControllerPhoton : PlayerController
     protected override void Awake()
     {
         photonView = GetComponent<PhotonView>();
-        if (!photonView.IsMine)
-            Destroy(this);
         
         base.Awake();
+    }
+
+    protected override void Start()
+    {
+        if (!photonView.IsMine)
+        {
+            Destroy(GetComponentInChildren<Camera>().gameObject);
+            Destroy(rigidbBody2D);
+        }
+    }
+
+    protected override void Update()
+    {
+        if (!photonView.IsMine)
+            return;
+        
+        base.Update();
+    }
+    
+    protected override void FixedUpdate()
+    {
+        if (!photonView.IsMine)
+            return;
+        
+        base.FixedUpdate();
     }
 }

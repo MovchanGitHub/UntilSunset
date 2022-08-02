@@ -157,7 +157,7 @@ public class PlayerController : MonoBehaviour
         {
             isTurning = true;
             isBat = true;
-            animator.Play("ToBat");
+            animator.SetBool("IsBat", true);
             yield return new WaitForSeconds(0.5f);
             SetBatSettings();
         }
@@ -174,7 +174,7 @@ public class PlayerController : MonoBehaviour
         {
             isTurning = true;
             isBat = false;
-            animator.Play("ToCharacter");
+            animator.SetBool("IsBat", false);
             yield return new WaitForSeconds(0.5f);
             SetCharacterSettings();
         }

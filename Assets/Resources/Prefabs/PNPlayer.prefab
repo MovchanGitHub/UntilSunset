@@ -18,7 +18,9 @@ MonoBehaviour:
   Synchronization: 3
   OwnershipTransfer: 0
   observableSearch: 2
-  ObservedComponents: []
+  ObservedComponents:
+  - {fileID: 5384325739381054528}
+  - {fileID: 7241694975768431653}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -53,6 +55,58 @@ MonoBehaviour:
   CHypnosis: {fileID: 8300000, guid: 5853349969d801c44abf5fcfc9345daa, type: 3}
   isTutorial: 0
   isLeaving: 0
+--- !u!114 &5384325739381054528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6009009557484702676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizePosition: 1
+  m_SynchronizeRotation: 0
+  m_SynchronizeScale: 1
+  m_UseLocal: 1
+--- !u!114 &7241694975768431653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6009009557484702676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b8c4a61274f60b4ea5fb4299cfdbf14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowLayerWeightsInspector: 1
+  ShowParameterInspector: 1
+  m_SynchronizeParameters:
+  - Type: 1
+    SynchronizeType: 1
+    Name: Horizontal
+  - Type: 1
+    SynchronizeType: 1
+    Name: Vertical
+  - Type: 1
+    SynchronizeType: 1
+    Name: Speed
+  - Type: 1
+    SynchronizeType: 1
+    Name: LastHorizontal
+  - Type: 1
+    SynchronizeType: 1
+    Name: LastVertical
+  - Type: 4
+    SynchronizeType: 1
+    Name: IsBat
+  m_SynchronizeLayers:
+  - SynchronizeType: 1
+    LayerIndex: 0
 --- !u!114 &4829205252917486422
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -159,7 +213,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2084660188024297576, guid: a0fcccc531f38214aa559452e4dba1f4, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2084660188024297577, guid: a0fcccc531f38214aa559452e4dba1f4, type: 3}
       propertyPath: m_Name
