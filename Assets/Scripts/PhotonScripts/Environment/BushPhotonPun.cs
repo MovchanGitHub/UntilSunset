@@ -1,10 +1,9 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
-using Photon.Pun;
 using UnityEngine;
+using Photon.Pun;
 
-public class ResourceScriptPhoton : ResourceScript
+public class BushPhotonPun : Bush
 {
     private PhotonView _photonView;
 

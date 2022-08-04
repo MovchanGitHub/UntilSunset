@@ -17,8 +17,9 @@ MonoBehaviour:
   prefixField: -1
   Synchronization: 3
   OwnershipTransfer: 0
-  observableSearch: 2
-  ObservedComponents: []
+  observableSearch: 0
+  ObservedComponents:
+  - {fileID: 0}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -36,6 +37,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DTimeMax: 1.25
   resLim: 5
+  res: 5
   sp:
   - {fileID: -8940097332086347385, guid: a41f9ebcdf01a0743bb61626f12feaa1, type: 3}
   - {fileID: 2529489809773951820, guid: a41f9ebcdf01a0743bb61626f12feaa1, type: 3}
@@ -79,6 +81,10 @@ PrefabInstance:
     - target: {fileID: 4879060554765628234, guid: f5635b20cd92abd429984f6cfcaba671, type: 3}
       propertyPath: m_Name
       value: PNStone
+      objectReference: {fileID: 0}
+    - target: {fileID: 4879060554765628234, guid: f5635b20cd92abd429984f6cfcaba671, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4879060554765628238, guid: f5635b20cd92abd429984f6cfcaba671, type: 3}
       propertyPath: m_RootOrder

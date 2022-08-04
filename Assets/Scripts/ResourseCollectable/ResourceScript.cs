@@ -9,16 +9,16 @@ public class ResourceScript : MonoBehaviour
     private PlayerController pl;
     protected double DTime;
     public double DTimeMax;
-    private double DTimeSpriteMax;
-    private double DTimeSprite;
-    private int spInd;
+    protected double DTimeSpriteMax;
+    protected double DTimeSprite;
+    protected int spInd;
     public int resLim;
-    private int res;
+    public int res;
     public Sprite[] sp;
     public GameObject resInd;
     private ResourceIndicator resIndComponent;
-    private SpriteRenderer resSp;
-    private AudioSource source;
+    protected SpriteRenderer resSp;
+    protected AudioSource source;
     private AudioSource sRemove;
     public AudioClip collectSound;
     protected Resources resources;
@@ -97,7 +97,7 @@ public class ResourceScript : MonoBehaviour
         sRemove.PlayOneShot(CRemove, 0.7f);
     }
 
-    private void AdjustIndicator()
+    protected virtual void AdjustIndicator()
     {
         DTimeSprite = DTimeSpriteMax;
         spInd++;
@@ -107,9 +107,14 @@ public class ResourceScript : MonoBehaviour
 
     protected virtual void CollectItem()
     {
-        res--;
+        DecreaseResource();
         source.PlayOneShot(collectSound, 0.5f);
         DTime = DTimeMax;
+    }
+
+    protected virtual void DecreaseResource()
+    {
+        res--;
     }
 
     protected virtual void ObjectDie()
