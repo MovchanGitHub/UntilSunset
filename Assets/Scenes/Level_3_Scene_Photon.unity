@@ -43750,15 +43750,19 @@ PrefabInstance:
       objectReference: {fileID: 5931929656969968880, guid: 021ba7e33f413164d85272613cfee6fd, type: 3}
     - target: {fileID: 1805187488066678600, guid: 104bee59c9378db43a7d533f3383c50e, type: 3}
       propertyPath: bushAmount
-      value: 6
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1805187488066678600, guid: 104bee59c9378db43a7d533f3383c50e, type: 3}
       propertyPath: treesAmount
-      value: 6
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1805187488066678600, guid: 104bee59c9378db43a7d533f3383c50e, type: 3}
+      propertyPath: stonesAmount
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1805187488066678600, guid: 104bee59c9378db43a7d533f3383c50e, type: 3}
       propertyPath: tombstoneAmount
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1805187488066678601, guid: 104bee59c9378db43a7d533f3383c50e, type: 3}
       propertyPath: m_Name
@@ -57312,13 +57316,13 @@ MonoBehaviour:
   - {fileID: 1361765004}
   - {fileID: 1361765003}
   stone: {fileID: 0}
-  stonesAmount: 2
+  stonesAmount: 4
   tree: {fileID: 0}
-  treesAmount: 6
+  treesAmount: 10
   bush: {fileID: 0}
-  bushAmount: 6
+  bushAmount: 2
   tombstone: {fileID: 0}
-  tombstoneAmount: 2
+  tombstoneAmount: 1
 --- !u!1 &2001603242
 GameObject:
   m_ObjectHideFlags: 0

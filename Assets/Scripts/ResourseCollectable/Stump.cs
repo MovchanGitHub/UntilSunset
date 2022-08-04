@@ -12,7 +12,7 @@ public class Stump : Wood
         Invoke(nameof(TurnToTree), Random.Range(90, 115));
     }
 
-    private void TurnToTree()
+    protected void TurnToTree()
     {
         tree.TurnToTree();
         RenewResource();

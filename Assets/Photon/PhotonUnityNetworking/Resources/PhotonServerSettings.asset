@@ -45,6 +45,8 @@ MonoBehaviour:
   - RPC_AdjustIndicator
   - RPC_DecreaseResource
   - RPC_DestroySource
+  - RPC_TurnToStump
+  - RPC_TurnToTree
   DisableAutoOpenWizard: 1
   ShowSettings: 0
   DevRegionSetOnce: 1
