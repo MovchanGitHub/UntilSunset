@@ -145,14 +145,14 @@ public class PhotonRoomCustomMatch : MonoBehaviourPunCallbacks, IInRoomCallbacks
         {
             //photonView.RPC(nameof(RPC_CreatePlayer), RpcTarget.All);
             PhotonNetwork.Instantiate(Path.Combine("Prefabs", "PNPlayer"), 
-                new Vector3(0f, Random.Range(0, 2), 0f), quaternion.identity, 0);
+                new Vector3(0f, Random.Range(0, 2), 0f), quaternion.identity);
         }
     }
 
-    [PunRPC]
+    /*[PunRPC]
     private void RPC_CreatePlayer()
     {
         PhotonNetwork.Instantiate(Path.Combine("Prefabs", "PNPlayer"), 
-            new Vector3(0f, Random.Range(0, 2), 0f), quaternion.identity, 0);
-    }
+            new Vector3(0f, Random.Range(0, 2), 0f), quaternion.identity);
+    }*/
 }

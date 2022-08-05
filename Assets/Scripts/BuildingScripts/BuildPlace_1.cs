@@ -150,30 +150,41 @@ public class BuildPlace_1 : MonoBehaviour
         if ((GameStats.Wood >= obj_price_wood) && (!EnemyIsNear) && (GameStats.Stone >= obj_price_stone))
         {
             IsWalled = true;
-            var structinst = Instantiate(obj_struct, new Vector3(transform.position.x, transform.position.y - 0.5f, transform.position.z), transform.rotation);
-            structinst.transform.SetParent(this.transform);
+            InstantiateStruct();
             GameStats.Wood -= obj_price_wood;
             GameStats.Stone -= obj_price_stone;
             resources.UpdateWood();
             resources.UpdateStones();
-            source.PlayOneShot(CBuild, 0.2f);
         }
+    }
+
+    protected virtual void InstantiateStruct()
+    {
+        var structinst = Instantiate(obj_struct, new Vector3(transform.position.x, transform.position.y - 0.5f, transform.position.z), transform.rotation);
+        structinst.transform.SetParent(this.transform);
+        source.PlayOneShot(CBuild, 0.2f);
     }
 
     public void BuildWall()
     {
         if ((GameStats.Wood >= 3) && (!EnemyIsNear))
         {
-            var wallinst = Instantiate(wall, new Vector3 (transform.position.x, transform.position.y - 0.5f, transform.position.z), transform.rotation);
-            wallinst.transform.SetParent(this.transform);
+            InstantiateWall();
             GameStats.Wood -= 3;
             resources.UpdateWood();
         }
     }
-
-    public void BrokenStakes()
+    
+    protected virtual void InstantiateWall()
     {
-        var bstakesinst = Instantiate(brstakes, new Vector3(transform.position.x, transform.position.y - 0.5f, transform.position.z), transform.rotation);
+        var wallinst = Instantiate(wall, new Vector3 (transform.position.x, transform.position.y - 0.5f, transform.position.z), transform.rotation);
+        wallinst.transform.SetParent(this.transform);
+    }
+
+    public virtual void BrokenStakes()
+    {
+        //var bstakesinst = Instantiate(brstakes, new Vector3(transform.position.x, transform.position.y - 0.5f, transform.position.z), transform.rotation);
+        Instantiate(brstakes, new Vector3(transform.position.x, transform.position.y - 0.5f, transform.position.z), transform.rotation);
     }
 
     void OnTriggerStay2D(Collider2D col)
