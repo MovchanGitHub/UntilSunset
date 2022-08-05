@@ -230,7 +230,7 @@ public class PlayerController : MonoBehaviour
             SetGodSettings();
     }
 
-    private void SetGodSettings() 
+    protected void SetGodSettings() 
     {
         isGod = true;
         nimb.SetActive(true);

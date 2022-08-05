@@ -21,6 +21,8 @@ public class PlayerControllerPhoton : PlayerController
             Destroy(GetComponentInChildren<Camera>().gameObject);
             Destroy(rigidbBody2D);
         }
+        else 
+            SetGodSettings();
     }
 
     protected override void Update()

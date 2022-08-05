@@ -47,6 +47,7 @@ MonoBehaviour:
   - RPC_DestroySource
   - RPC_TurnToStump
   - RPC_TurnToTree
+  - ChangeSpawnedEnemyDirection
   DisableAutoOpenWizard: 1
   ShowSettings: 0
   DevRegionSetOnce: 1

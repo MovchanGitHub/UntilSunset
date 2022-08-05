@@ -68,8 +68,11 @@ public class TimeCycle : MonoBehaviour
 
     //Раскомментировать для дебага - скип дня/ночи
     private void Update()
-    {
-
+    { 
+        if (Input.GetKeyDown(KeyCode.O))
+        {
+            GameTime = DayLenght + 1;
+        }
     }
 
     void FixedUpdate()

@@ -6,13 +6,13 @@ using static System.Math;
 public class SpawnerScript : MonoBehaviour
 {
     public List<EnemyCharacter> enemies;
-    private List<int> usedEnemies;
+    protected List<int> usedEnemies;
 
-    public int spawnCount;//максимум общей стоимости врагов на текущей волне
-    public float spawnRate;//счетчик времени спавна врагов
-    private int currentSpawned;  //общая стоимость заспавненных врагов
-    [SerializeField] private float spawnTime; //период спавна врагов
-    [SerializeField] private int direction; // задает направление врагов после спавна
+    public int spawnCount;//пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
+    public float spawnRate;//пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
+    protected int currentSpawned;  //пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
+    [SerializeField] protected float spawnTime; //пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
+    [SerializeField] protected int direction; // пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
 
 
     private List<List<int>> types;
@@ -25,7 +25,7 @@ public class SpawnerScript : MonoBehaviour
         //UpdateSpawn();
     }
 
-    void Update()
+    protected virtual void Update()
     {
         spawnTime -= Time.deltaTime;
         if ((currentSpawned < spawnCount) && (spawnTime <= 0))
@@ -38,7 +38,7 @@ public class SpawnerScript : MonoBehaviour
         }
     }
 
-    private EnemyCharacter ChooseEnemy()
+    protected EnemyCharacter ChooseEnemy()
     {
         EnemyCharacter res;
         

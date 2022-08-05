@@ -136,9 +136,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6479063497515502912, guid: 25b895992693cc3479e1ca514e1c9898, type: 3}
       propertyPath: m_Name
-      value: SpawnerRight
+      value: SpawnerRightPhotonPun
       objectReference: {fileID: 0}
     - target: {fileID: 6479063497515502914, guid: 25b895992693cc3479e1ca514e1c9898, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6479063497515502915, guid: 25b895992693cc3479e1ca514e1c9898, type: 3}
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
@@ -198,7 +202,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6479063497515502915, guid: 25b895992693cc3479e1ca514e1c9898, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 25b895992693cc3479e1ca514e1c9898, type: 3}
 --- !u!1001 &4141474
 PrefabInstance:
@@ -7782,6 +7787,52 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6479063497515502912, guid: 25b895992693cc3479e1ca514e1c9898, type: 3}
   m_PrefabInstance: {fileID: 466482}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &450193104
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 450193103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2097b45dfd431e74293162cb740d5d10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemies:
+  - {fileID: 1793598881374595881, guid: ba930c2120585a74b8bd50a14b4c5b63, type: 3}
+  - {fileID: -6340840127256783564, guid: b00590fd835165b499adf818ab1ff7be, type: 3}
+  - {fileID: 5802639313162397534, guid: 5cf8779da48c53d459ec1d241a1b2e62, type: 3}
+  spawnCount: 0
+  spawnRate: 5
+  spawnTime: 0
+  direction: -1
+  enemiesNames:
+  - Enemy_3_fatPhotonPun
+  - Enemy_3_grenaderPhotonPun
+  - Enemy_3_kamikadzePhotonPun
+--- !u!114 &450193105
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 450193103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 6
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1001 &454671622
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -40524,6 +40575,52 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6479063497515502912, guid: 25b895992693cc3479e1ca514e1c9898, type: 3}
   m_PrefabInstance: {fileID: 6479063496095047301}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1150285557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1150285556}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2097b45dfd431e74293162cb740d5d10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemies:
+  - {fileID: 1793598881374595881, guid: ba930c2120585a74b8bd50a14b4c5b63, type: 3}
+  - {fileID: -6340840127256783564, guid: b00590fd835165b499adf818ab1ff7be, type: 3}
+  - {fileID: 5802639313162397534, guid: 5cf8779da48c53d459ec1d241a1b2e62, type: 3}
+  spawnCount: 0
+  spawnRate: 5
+  spawnTime: 0
+  direction: 1
+  enemiesNames:
+  - Enemy_3_fatPhotonPun
+  - Enemy_3_grenaderPhotonPun
+  - Enemy_3_kamikadzePhotonPun
+--- !u!114 &1150285558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1150285556}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 5
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1001 &1151630479
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -59942,7 +60039,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6479063497515502912, guid: 25b895992693cc3479e1ca514e1c9898, type: 3}
       propertyPath: m_Name
-      value: SpawnerLeft
+      value: SpawnerLeftPhotonPun
       objectReference: {fileID: 0}
     - target: {fileID: 6479063497515502912, guid: 25b895992693cc3479e1ca514e1c9898, type: 3}
       propertyPath: m_IsActive
@@ -59955,6 +60052,14 @@ PrefabInstance:
     - target: {fileID: 6479063497515502915, guid: 25b895992693cc3479e1ca514e1c9898, type: 3}
       propertyPath: direction
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6479063497515502915, guid: 25b895992693cc3479e1ca514e1c9898, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6479063497515502915, guid: 25b895992693cc3479e1ca514e1c9898, type: 3}
+      propertyPath: spawnCount
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6479063497515502915, guid: 25b895992693cc3479e1ca514e1c9898, type: 3}
       propertyPath: enemies.Array.data[0]
@@ -60012,7 +60117,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6479063497515502915, guid: 25b895992693cc3479e1ca514e1c9898, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 25b895992693cc3479e1ca514e1c9898, type: 3}
 --- !u!1001 &6655123821041788510
 PrefabInstance:
