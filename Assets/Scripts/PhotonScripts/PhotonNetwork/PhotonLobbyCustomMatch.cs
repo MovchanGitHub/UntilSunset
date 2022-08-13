@@ -15,6 +15,9 @@ public class PhotonLobbyCustomMatch : MonoBehaviourPunCallbacks, ILobbyCallbacks
     public GameObject roomListingPrefab;
     public Transform roomsPanel;
 
+    public GameObject LobbyMenu;
+    public GameObject offlineButton;
+
     void Awake()
     {
         instance = this;
@@ -31,7 +34,8 @@ public class PhotonLobbyCustomMatch : MonoBehaviourPunCallbacks, ILobbyCallbacks
         Debug.Log("You have successfully connected to the Photon master server.");
         PhotonNetwork.AutomaticallySyncScene = true;        
         PhotonNetwork.NickName = "Player" + Random.Range(1, 100);
-
+        LobbyMenu.SetActive(true);
+        offlineButton.SetActive(false);
     }
 
     public override void OnRoomListUpdate(List<RoomInfo> roomList)

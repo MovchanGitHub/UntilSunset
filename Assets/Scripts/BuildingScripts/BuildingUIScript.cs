@@ -12,6 +12,13 @@ public class BuildingUIScript : MonoBehaviour
     public GameObject tower;
     public GameObject towerGhost;
 
+    public static BuildingUIScript instance;
+
+    private void Awake()
+    {
+        instance = this;
+    }
+
     public void BuildWallButton()
     {
         if (!BuildPlace_1.paused)
@@ -20,6 +27,7 @@ public class BuildingUIScript : MonoBehaviour
             BuildPlace_1.obj_ghost = wll1Ghost;
             BuildPlace_1.obj_price_wood = 3;
             BuildPlace_1.obj_price_stone = 0;
+            BuildPlace_1.structNumber = 1;
         }
     }
 
@@ -31,6 +39,7 @@ public class BuildingUIScript : MonoBehaviour
             BuildPlace_1.obj_ghost = stakesGhost;
             BuildPlace_1.obj_price_wood = 1;
             BuildPlace_1.obj_price_stone = 0;
+            BuildPlace_1.structNumber = 2;
         }
     }
 
@@ -42,6 +51,7 @@ public class BuildingUIScript : MonoBehaviour
             BuildPlace_1.obj_ghost = towerGhost;
             BuildPlace_1.obj_price_wood = 4;
             BuildPlace_1.obj_price_stone = 2;
+            BuildPlace_1.structNumber = 3;
         }
     }
 
@@ -51,6 +61,7 @@ public class BuildingUIScript : MonoBehaviour
         BuildPlace_1.obj_ghost = null;
         BuildPlace_1.obj_price_wood = 0;
         BuildPlace_1.obj_price_stone = 0;
+        BuildPlace_1.structNumber = 0;
     }
 
     public void DestroyTool()

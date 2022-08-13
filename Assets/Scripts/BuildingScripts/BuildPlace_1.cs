@@ -26,7 +26,7 @@ public class BuildPlace_1 : MonoBehaviour
     float timerDisplay;
     private Resources resources;
     private bool EnemyIsNear;
-    private AudioSource source;
+    protected AudioSource source;
     public AudioClip CDestroy;
     public AudioClip CBuild;
     private Wall_1 w1;
@@ -35,6 +35,8 @@ public class BuildPlace_1 : MonoBehaviour
     private StakesScript s;
     private TowerScript t;
     private bool IsWalled;
+
+    public static int structNumber;
 
     void Start()
     {
