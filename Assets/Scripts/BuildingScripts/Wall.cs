@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Collections.Specialized;
+using Photon.Pun;
 using UnityEngine;
 
 public class Wall : Building
@@ -23,6 +25,8 @@ public class Wall : Building
     public AudioClip CRecover;
     public AudioClip CUpgrade;
 
+    public BuildingPlacePhotonPun parentScript;
+
     protected override void Start()
     {
         resources = GameObject.Find("CoinsText").GetComponent<Resources>();
@@ -30,6 +34,7 @@ public class Wall : Building
         bp = transform.parent.GetComponent<BuildPlace_1>();
         bp.GetComponent<BoxCollider2D>().enabled = false;
         base.Start();
+        parentScript = GetComponentInParent<BuildingPlacePhotonPun>();
     }
 
     private void Update()
@@ -47,7 +52,15 @@ public class Wall : Building
         GameStats.Stone += del_stone_re;
         resources.UpdateWood();
         resources.UpdateStones();
-        Destroy(gameObject);
+
+        if (parentScript != null)
+        {
+            parentScript.DestroyBuilding();
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
     public void OnDestroy()
@@ -73,7 +86,16 @@ public class Wall : Building
             resources.UpdateWood();
             resources.UpdateStones();
             HideDialog();
-            health = maxHealth;
+            
+            if (parentScript != null)
+            {
+                parentScript.RecoverBuilding();
+            }
+            else
+            {
+                health = maxHealth;
+            }
+            
             transform.GetChild(0).GetChild(0).GetChild(0).GetComponent<WallHPBar>().SetValue(health / (float)maxHealth);
         }
     }
@@ -83,14 +105,22 @@ public class Wall : Building
         if ((GameStats.Wood >= upg_wall_cost) && (GameStats.Stone >= upg_stone_cost) )
         {
             upgraded = true;
-            var wall2inst = Instantiate(nextwall, transform.position, transform.rotation);
-            wall2inst.transform.SetParent(transform.parent.transform);
             GameStats.Wood -= upg_wall_cost;
             GameStats.Stone -= upg_stone_cost;
             resources.UpdateWood();
             resources.UpdateStones();
             HideDialog();
-            Destroy(gameObject);
+
+            if (parentScript != null)
+            {
+                parentScript.UpgradeWall();
+            }
+            else
+            {
+                var wall2inst = Instantiate(nextwall, transform.position, transform.rotation);
+                wall2inst.transform.SetParent(transform.parent.transform);
+                Destroy(gameObject);
+            }
         }
     }
 

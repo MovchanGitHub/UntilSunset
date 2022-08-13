@@ -19,16 +19,21 @@ public class TowerScript : Building, IDamage
     public float shotTimer;
     float defTime = 3;
     public GameObject dialogBox;
-
+    
+    public BuildingPlacePhotonPun parentScript;
+    
     protected override void Start()
     {
         bp = transform.parent.GetComponent<BuildPlace_1>();
         et = false;
         sc = bp.direction;
-        transform.GetChild(0).GetComponent<Transform>().localScale = new Vector3(transform.GetChild(0).GetComponent<Transform>().localScale.x * sc, transform.GetChild(0).GetComponent<Transform>().localScale.y, transform.GetChild(0).GetComponent<Transform>().localScale.z);
+        transform.GetChild(0).GetComponent<Transform>().localScale = 
+            new Vector3(transform.GetChild(0).GetComponent<Transform>().localScale.x * sc, transform.GetChild(0).
+                GetComponent<Transform>().localScale.y, transform.GetChild(0).GetComponent<Transform>().localScale.z);
         transform.localScale = new Vector3(transform.localScale.x * sc, transform.localScale.y, transform.localScale.z);
         bp.GetComponent<BoxCollider2D>().enabled = false;
         maxHealth = 30;
+        parentScript = GetComponentInParent<BuildingPlacePhotonPun>();
         base.Start();
     }
 
@@ -74,7 +79,16 @@ public class TowerScript : Building, IDamage
             resources.UpdateWood();
             resources.UpdateStones();
             HideDialog();
-            health = maxHealth;
+            
+            if (parentScript != null)
+            {
+                parentScript.RecoverBuilding();
+            }
+            else
+            {
+                health = maxHealth;
+            }
+            
             transform.GetChild(0).GetChild(0).GetChild(0).GetComponent<WallHPBar>().SetValue(health / (float)maxHealth);
         }
     }
@@ -91,7 +105,15 @@ public class TowerScript : Building, IDamage
         GameStats.Stone += del_stone_re;
         resources.UpdateWood();
         resources.UpdateStones();
-        Destroy(gameObject);
+        
+        if (parentScript != null)
+        {
+            parentScript.DestroyBuilding();
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
     protected void OnDestroy()

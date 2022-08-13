@@ -55,6 +55,7 @@ MonoBehaviour:
   CHypnosis: {fileID: 8300000, guid: 5853349969d801c44abf5fcfc9345daa, type: 3}
   isTutorial: 0
   isLeaving: 0
+  photonView: {fileID: 0}
 --- !u!114 &5384325739381054528
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -245,11 +246,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2084660188024297621, guid: a0fcccc531f38214aa559452e4dba1f4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.031059407
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2084660188024297621, guid: a0fcccc531f38214aa559452e4dba1f4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.2754307
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2084660188024297621, guid: a0fcccc531f38214aa559452e4dba1f4, type: 3}
       propertyPath: m_LocalPosition.z
@@ -307,7 +308,8 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2887469069157262972, guid: a0fcccc531f38214aa559452e4dba1f4, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: a0fcccc531f38214aa559452e4dba1f4, type: 3}
 --- !u!1 &7287025687984589936 stripped
 GameObject:

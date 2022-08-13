@@ -26,7 +26,7 @@ public class ResourceScriptPhoton : ResourceScript
     
     protected override void DecreaseResource()
     {
-        _photonView.RPC(nameof(RPC_DecreaseResource), RpcTarget.All);
+        _photonView.RPC(nameof(RPC_DecreaseResource), RpcTarget.AllViaServer);
     }
     
     [PunRPC]
@@ -37,7 +37,7 @@ public class ResourceScriptPhoton : ResourceScript
     
     protected override void AdjustIndicator()
     {
-        _photonView.RPC(nameof(RPC_AdjustIndicator), RpcTarget.All);
+        _photonView.RPC(nameof(RPC_AdjustIndicator), RpcTarget.AllViaServer);
     }
     
     [PunRPC]

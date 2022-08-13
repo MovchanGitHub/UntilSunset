@@ -14,7 +14,7 @@ public class StumpPhotonPun : Stump
     
     protected override void ObjectDie()
     {
-        _photonView.RPC(nameof(RPC_TurnToTree), RpcTarget.AllViaServer, Random.Range(90, 115));
+        _photonView.RPC(nameof(RPC_TurnToTree), RpcTarget.All, Random.Range(90, 115));
     }
     
     [PunRPC]

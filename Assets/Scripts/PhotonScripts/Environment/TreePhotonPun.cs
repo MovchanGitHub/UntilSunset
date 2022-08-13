@@ -14,7 +14,7 @@ public class TreePhotonPun : Tree
     
     protected override void ObjectDie()
     {
-        _photonView.RPC(nameof(RPC_TurnToStump), RpcTarget.All);
+        _photonView.RPC(nameof(RPC_TurnToStump), RpcTarget.AllViaServer);
     }
     
     [PunRPC]

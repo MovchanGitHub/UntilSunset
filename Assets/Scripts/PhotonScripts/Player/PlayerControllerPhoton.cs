@@ -5,7 +5,7 @@ using Photon.Pun;
 
 public class PlayerControllerPhoton : PlayerController
 {
-    private PhotonView photonView;
+    public PhotonView photonView;
     private BoxCollider2D _boxCollider2D;
     
     protected override void Awake()

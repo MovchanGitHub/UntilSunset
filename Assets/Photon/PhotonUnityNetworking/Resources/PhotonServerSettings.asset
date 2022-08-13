@@ -51,6 +51,10 @@ MonoBehaviour:
   - RPC_BrokenStakes
   - RPC_InstantiateStruct
   - RPC_InstantiateWall
+  - RPC_DestroyWall
+  - RPC_DestroyBuilding
+  - RPC_UpgradeWall
+  - RPC_RecoverBuilding
   DisableAutoOpenWizard: 1
   ShowSettings: 0
   DevRegionSetOnce: 1

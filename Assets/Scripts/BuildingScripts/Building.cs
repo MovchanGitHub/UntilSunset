@@ -7,7 +7,7 @@ public class Building : MonoBehaviour
     public static int tool;
 
     protected int _line;
-    protected int maxHealth;
+    public int maxHealth;
     public static bool pause;
     public static bool pausecl;
     private int currentHealth;
@@ -15,7 +15,7 @@ public class Building : MonoBehaviour
     public int health
     {
         get { return currentHealth; }
-        protected set { 
+        set { 
             currentHealth = value;
             UpdateInfo();
             if (transform.tag == "Wall1" || transform.tag == "Wall2")

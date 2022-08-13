@@ -8,6 +8,7 @@ using UnityEngine;
 public class BuildingPlacePhotonPun : BuildPlace_1
 {
     private PhotonView _photonView;
+    public GameObject structinst;
 
     private void Awake()
     {
@@ -22,7 +23,7 @@ public class BuildingPlacePhotonPun : BuildPlace_1
     [PunRPC]
     private void RPC_InstantiateStruct(int structIndex)
     {
-        GameObject structinst = null;
+        structinst = null;
         switch (structIndex)
         {
             case 1:
@@ -40,25 +41,44 @@ public class BuildingPlacePhotonPun : BuildPlace_1
         source.PlayOneShot(CBuild, 0.2f);
     }
 
-    /*protected override void InstantiateWall()
+    public void DestroyBuilding()
     {
-        _photonView.RPC(nameof(RPC_InstantiateWall), RpcTarget.All);
+        _photonView.RPC(nameof(RPC_DestroyBuilding), RpcTarget.AllViaServer);
     }
 
     [PunRPC]
-    private void RPC_InstantiateWall()
+    private void RPC_DestroyBuilding()
     {
-        base.InstantiateWall();
+        Destroy(structinst);
     }
-
-    public override void BrokenStakes()
+    
+    public void UpgradeWall()
     {
-        _photonView.RPC(nameof(RPC_BrokenStakes), RpcTarget.All);
+        _photonView.RPC(nameof(RPC_UpgradeWall), RpcTarget.AllViaServer);
     }
 
     [PunRPC]
-    private void RPC_BrokenStakes()
+    private void RPC_UpgradeWall()
     {
-        base.BrokenStakes();
-    }*/
+        var wall2inst = Instantiate(structinst.GetComponent<Wall>().nextwall, 
+            new Vector3(transform.position.x, transform.position.y - 0.5f, transform.position.z), 
+            transform.rotation);
+        wall2inst.transform.SetParent(transform);
+        Destroy(structinst);
+        structinst = wall2inst;
+    }
+    
+    public void RecoverBuilding()
+    {
+        _photonView.RPC(nameof(RPC_RecoverBuilding), RpcTarget.AllViaServer);
+    }
+
+    [PunRPC]
+    private void RPC_RecoverBuilding()
+    {
+        Building building = structinst.GetComponent<Building>();
+        building.health = building.maxHealth;
+    }
+    
+    
 }

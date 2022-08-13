@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Photon.Pun;
 using UnityEngine;
 
 public class MainBuilding : MonoBehaviour
@@ -29,8 +30,8 @@ public class MainBuilding : MonoBehaviour
             transform.GetChild(2).GetComponent<Coffin>().RecieveDamage(enemy.damage, DamageType.close_combat);
         }
 
-        PlayerController player = collision.gameObject.GetComponent<PlayerController>();
-        if (player)
+        PlayerControllerPhoton player = collision.gameObject.GetComponent<PlayerControllerPhoton>();
+        if (player && player.photonView.IsMine)
         {
             player.EnterMainBuilding();
             isTriggered = true;
@@ -40,8 +41,8 @@ public class MainBuilding : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        PlayerController player = collision.gameObject.GetComponent<PlayerController>();
-        if (player)
+        PlayerControllerPhoton player = collision.gameObject.GetComponent<PlayerControllerPhoton>();
+        if (player && player.photonView.IsMine)
         {
             player.ExitMainBuilding();
             isTriggered = false;
