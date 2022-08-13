@@ -1,7 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using static System.Math;
+using Random = UnityEngine.Random;
 
 public class SpawnerScript : MonoBehaviour
 {
@@ -24,6 +26,10 @@ public class SpawnerScript : MonoBehaviour
         types.Add(new List<int>() { 0, 0, 0, 0, 1, 1, 2, 2 });
         //UpdateSpawn();
     }
+    private void OnEnable()
+    {
+        UpdateSpawn();
+    }
 
     protected virtual void Update()
     {
@@ -37,6 +43,7 @@ public class SpawnerScript : MonoBehaviour
             spawnTime = spawnRate;
         }
     }
+
 
     protected EnemyCharacter ChooseEnemy()
     {

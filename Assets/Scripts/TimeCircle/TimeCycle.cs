@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Photon.Pun;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -159,7 +160,6 @@ public class TimeCycle : MonoBehaviour
                 foreach (var spawner in spawners)
                 {
                     spawner.SetActive(true);
-                    spawner.GetComponent<SpawnerScript>().UpdateSpawn();
                 }
                 //StartCoroutine(SetDay());
             }
