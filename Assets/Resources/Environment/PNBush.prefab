@@ -129,7 +129,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: PNBush
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2459762701017443251, guid: 10f4aa4ceff40344fa533d34a6a8a921, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 10f4aa4ceff40344fa533d34a6a8a921, type: 3}
 --- !u!1 &4695624794784539085 stripped
 GameObject:

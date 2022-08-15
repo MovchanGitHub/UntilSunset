@@ -35,7 +35,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0095248ef80b364598c9a3e6cdf567d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DTimeMax: 1.25
+  DTimeMax: 1.5
   resLim: 5
   res: 5
   sp:
@@ -131,10 +131,15 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5207178949532976434, guid: f5635b20cd92abd429984f6cfcaba671, type: 3}
+      propertyPath: DTimeMax
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5207178949532976434, guid: f5635b20cd92abd429984f6cfcaba671, type: 3}
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5207178949532976434, guid: f5635b20cd92abd429984f6cfcaba671, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: f5635b20cd92abd429984f6cfcaba671, type: 3}
 --- !u!1 &2158436075979533782 stripped
 GameObject:

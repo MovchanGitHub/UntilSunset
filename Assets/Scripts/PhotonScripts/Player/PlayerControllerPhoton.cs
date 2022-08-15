@@ -55,4 +55,15 @@ public class PlayerControllerPhoton : PlayerController
         
         base.FixedUpdate();
     }
+
+    protected override void AtBatSpawning(Vector3 spawnPosition)
+    {
+        photonView.RPC(nameof(RPC_AtBatSpawning), RpcTarget.AllViaServer, spawnPosition);
+    }
+
+    [PunRPC]
+    private void RPC_AtBatSpawning(Vector3 spawnPosition)
+    {
+        base.AtBatSpawning(spawnPosition);
+    }
 }

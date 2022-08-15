@@ -34,7 +34,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d794a48db6dea744d83f6778269cc1fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DTimeMax: 0.92
+  DTimeMax: 1
   resLim: 3
   res: 0
   sp:
@@ -70,7 +70,7 @@ MonoBehaviour:
   resInd: {fileID: 4136225973181618767}
   collectSound: {fileID: 8300000, guid: d1dc9a867ae498149a096c8abe90c565, type: 3}
   CRemove: {fileID: 8300000, guid: bf062589673a8a045ab7142339dcfde9, type: 3}
-  tree: {fileID: 4672092316779919796}
+  tree: {fileID: 5998541931001486246}
 --- !u!114 &5328228504592470176
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -105,7 +105,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a7a111746cb46e4bbabb8bff4eca086, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DTimeMax: 0.4
+  DTimeMax: 0.6
   resLim: 7
   res: 0
   sp:
@@ -149,6 +149,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6407808468499021210, guid: 5311b9eda48b8fa4e8a66e704c2f26cf, type: 3}
+      propertyPath: DTimeMax
+      value: 0.6
+      objectReference: {fileID: 0}
     - target: {fileID: 6407808468499021210, guid: 5311b9eda48b8fa4e8a66e704c2f26cf, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -202,27 +206,22 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7811778546058832577, guid: 5311b9eda48b8fa4e8a66e704c2f26cf, type: 3}
+      propertyPath: tree
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7811778546058832577, guid: 5311b9eda48b8fa4e8a66e704c2f26cf, type: 3}
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6407808468499021210, guid: 5311b9eda48b8fa4e8a66e704c2f26cf, type: 3}
+    - {fileID: 7811778546058832577, guid: 5311b9eda48b8fa4e8a66e704c2f26cf, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 5311b9eda48b8fa4e8a66e704c2f26cf, type: 3}
 --- !u!1 &9099460926998542650 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7384856035270032660, guid: 5311b9eda48b8fa4e8a66e704c2f26cf, type: 3}
   m_PrefabInstance: {fileID: 1746131046449021998}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &4672092316779919796 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6407808468499021210, guid: 5311b9eda48b8fa4e8a66e704c2f26cf, type: 3}
-  m_PrefabInstance: {fileID: 1746131046449021998}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9099460926998542650}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe0fc64ae2435904b8f6e7ef9ea9fd4b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!95 &1815652332813841355 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 74870979047356389, guid: 5311b9eda48b8fa4e8a66e704c2f26cf, type: 3}

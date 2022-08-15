@@ -55,6 +55,11 @@ MonoBehaviour:
   - RPC_DestroyBuilding
   - RPC_UpgradeWall
   - RPC_RecoverBuilding
+  - RPC_AtBatSpawning
+  - RPC_Pause
+  - RPC_Resume
+  - RPC_RestartGame
+  - RPC_SetTimeScale
   DisableAutoOpenWizard: 1
   ShowSettings: 0
   DevRegionSetOnce: 1

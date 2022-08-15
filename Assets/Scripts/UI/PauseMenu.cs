@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -21,9 +22,9 @@ public class PauseMenu : MonoBehaviour
     public static bool SpawnClick = false;
     public static bool TurningClick = false;
     public GameObject InfoEnemy;
-    private Resources res;
+    protected Resources res;
 
-    public bool SettingsIsOpened = false;//Открыто ли меню настроек
+    public bool SettingsIsOpened = false;//пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
     public bool InfoIsOpened = false;
 
     private void Awake()
@@ -67,7 +68,7 @@ public class PauseMenu : MonoBehaviour
         }
     }
 
-    public void Resume()
+    protected virtual void Resume()
     {
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f ;
@@ -76,7 +77,7 @@ public class PauseMenu : MonoBehaviour
         Building.ResumeBuildingUI();
     }
 
-    void Pause()
+    protected virtual void Pause()
     {
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
@@ -124,7 +125,7 @@ public class PauseMenu : MonoBehaviour
         }
     }
 
-    public void RestartGame()
+    protected virtual void RestartGame()
     {
         Debug.Log("Restart");
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
@@ -175,7 +176,7 @@ public class PauseMenu : MonoBehaviour
     public void SpawnBatPressed()
     {
         if (!PlayerController.isBat && PlayerController.timeCycle.GetIsDay() && !GameIsPaused)
-            {
+        {
             SpawnClick = true;
             PlayerController.SpawnBat();
             SpawnClick = false;
@@ -214,7 +215,7 @@ public class PauseMenu : MonoBehaviour
     }
 
     // =======================================================================
-    // Меню настроек
+    // пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
     // =======================================================================
 
     public void SettingsPressed()

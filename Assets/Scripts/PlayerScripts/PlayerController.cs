@@ -317,15 +317,20 @@ public class PlayerController : MonoBehaviour
             if (GameStats.henchmanOnScreen[henchmanLine] == 0)
             {
                 isTurning = true;
-                animator.Play("InvokeHenchman");
-                Invoke(nameof(SetCharacterSettings), 0.2f);
                 CalculateBatSpawnPosition();
-                Instantiate(Bat, batSpawnPosition, Quaternion.identity);
+                AtBatSpawning(batSpawnPosition);
                 GameStats.Henchman -= 3;
                 HenchmanRes.UpdateHenchman();
-                GameStats.henchmanOnScreen[henchmanLine] = 1;
             }
         }
+    }
+
+    protected virtual void AtBatSpawning(Vector3 spawnPosition)
+    {
+        Invoke(nameof(SetCharacterSettings), 0.2f);
+        animator.Play("InvokeHenchman");
+        Instantiate(Bat, spawnPosition, Quaternion.identity);
+        GameStats.henchmanOnScreen[henchmanLine] = 1;
     }
 
     public void EnterMainBuilding()
