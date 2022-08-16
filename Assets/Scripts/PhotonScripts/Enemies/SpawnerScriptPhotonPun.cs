@@ -11,6 +11,15 @@ public class SpawnerScriptPhotonPun : SpawnerScript
     private PhotonView _photonView;
     public List<string> enemiesNames;
     private GameObject enemyObject;
+
+    protected override void Awake()
+    {
+        types = new List<List<int>>();
+        types.Add(new List<int>() { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 2, 2, 2 });
+        types.Add(new List<int>() { 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5 });
+        types.Add(new List<int>() { 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 7, 7, 7, 7, 7, 7, 8, 8, 8, 8, 8, 8, 8 });
+    }
+
     private void Start()
     {
         if (!PhotonNetwork.IsMasterClient)

@@ -27,7 +27,7 @@ public class PlayerControllerPhoton : PlayerController
         }
         else
         {
-            //SetGodSettings();
+            SetGodSettings();
             nimb.SetActive(true);
         }
     }
@@ -65,5 +65,24 @@ public class PlayerControllerPhoton : PlayerController
     private void RPC_AtBatSpawning(Vector3 spawnPosition)
     {
         base.AtBatSpawning(spawnPosition);
+    }
+
+    protected override void AtEnemySubdue(EnemyCharacter enemy)
+    {
+        photonView.RPC(nameof(RPC_AtEnemySubdue), RpcTarget.All, enemy.photonView.ViewID);
+    }
+
+    [PunRPC]
+    private void RPC_AtEnemySubdue(int enemyViewID)
+    {
+        PhotonView enemy = PhotonView.Find(enemyViewID);
+        if (enemy)
+        {
+            base.AtEnemySubdue(enemy.gameObject.transform.GetComponent<EnemyCharacter>());
+        }
+        else
+        {
+            Debug.LogError("Enemy photon view wasn't found.");
+        }
     }
 }

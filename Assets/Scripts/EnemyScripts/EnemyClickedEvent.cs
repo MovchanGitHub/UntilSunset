@@ -6,7 +6,7 @@ public class EnemyClickedEvent : MonoBehaviour
 {
     private PlayerController player;
 
-    private void Awake()
+    private void Start()
     {
         player = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
     }

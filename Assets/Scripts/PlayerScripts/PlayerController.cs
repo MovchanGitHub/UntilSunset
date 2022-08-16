@@ -349,17 +349,21 @@ public class PlayerController : MonoBehaviour
     }
 
     public void SubdueEnemy(EnemyCharacter enemy)
-
     {
         if (GameStats.Henchman >= 5 && !enemy.IsFriend() 
             && !isBat && timeCycle.GetIsDay() && !isTurning)
         {
-            enemy.IsFriendMakeTrue();
-            isTurning = true;
-            animator.Play("Magic");
-            GameObject.Find("ResSounds").GetComponent<AudioSource>().PlayOneShot(CHypnosis);
-            StartCoroutine(ThunderZoneActivate(enemy));
+            AtEnemySubdue(enemy);
         }
+    }
+
+    protected virtual void AtEnemySubdue(EnemyCharacter enemy)
+    {
+        enemy.IsFriendMakeTrue();
+        isTurning = true;
+        animator.Play("Magic");
+        GameObject.Find("ResSounds").GetComponent<AudioSource>().PlayOneShot(CHypnosis);
+        StartCoroutine(ThunderZoneActivate(enemy));
     }
 
     public void LoseSubduingBlood()

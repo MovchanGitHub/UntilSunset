@@ -17,8 +17,9 @@ public class SpawnerScript : MonoBehaviour
     [SerializeField] protected int direction; // ������ ����������� ������ ����� ������
 
 
-    private List<List<int>> types;
-    void Awake()
+    protected List<List<int>> types;
+    
+    protected virtual void Awake()
     {
         types = new List<List<int>>();
         types.Add(new List<int>() { 0, 0, 0, 0, 0, 0 });
@@ -26,6 +27,7 @@ public class SpawnerScript : MonoBehaviour
         types.Add(new List<int>() { 0, 0, 0, 0, 1, 1, 2, 2 });
         //UpdateSpawn();
     }
+    
     private void OnEnable()
     {
         UpdateSpawn();

@@ -60,6 +60,7 @@ MonoBehaviour:
   - RPC_Resume
   - RPC_RestartGame
   - RPC_SetTimeScale
+  - RPC_AtEnemySubdue
   DisableAutoOpenWizard: 1
   ShowSettings: 0
   DevRegionSetOnce: 1

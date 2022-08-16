@@ -4584,6 +4584,12 @@ MonoBehaviour:
   spawnTime: 0
   direction: -1
   enemiesNames:
+  - Enemy_1_closePhotonPun
+  - Enemy_1_rangePhotonPun
+  - Enemy_1_bigPhotonPun
+  - Enemy_2_fastPhotonPun
+  - Enemy_2_shieldPhotonPun
+  - Enemy_2_spearmanPhotonPun
   - Enemy_3_fatPhotonPun
   - Enemy_3_grenaderPhotonPun
   - Enemy_3_kamikadzePhotonPun
@@ -30005,6 +30011,12 @@ MonoBehaviour:
   spawnTime: 0
   direction: 1
   enemiesNames:
+  - Enemy_1_closePhotonPun
+  - Enemy_1_rangePhotonPun
+  - Enemy_1_bigPhotonPun
+  - Enemy_2_fastPhotonPun
+  - Enemy_2_shieldPhotonPun
+  - Enemy_2_spearmanPhotonPun
   - Enemy_3_fatPhotonPun
   - Enemy_3_grenaderPhotonPun
   - Enemy_3_kamikadzePhotonPun
